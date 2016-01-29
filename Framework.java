@@ -6,25 +6,27 @@ import java.util.ArrayList;
 
 
 public class Framework {
-	int n;//number of men (women)
+	int n;
+    //number of men (women)
 	
-	int MenPrefs[][];//preference list of men (n*n)
-	int WomenPrefs[][];//preference list of women (n*n)
+	int MenPrefs[][];
+    //preference list of men (n*n)
+	int WomenPrefs[][]; 
+    // preference list of women (n*n)
 	
-	ArrayList<MatchedPair> MatchedPairsList;//your output should fill this arraylist which is empty at start
+	ArrayList<MatchedPair> MatchedPairsList;
+    //your output should fill this arraylist which is empty at start
 	
-	public class MatchedPair{
+	public class MatchedPair {
 		int man;//man's number
 		int woman;//woman's number
 		
-		public MatchedPair(int Man,int Woman)
-		{
+		public MatchedPair(int Man,int Woman) {
 			man=Man;
 			woman=Woman;
 		}
 		
-		public MatchedPair()
-		{	
+		public MatchedPair() {	
 		}
 	}
 		

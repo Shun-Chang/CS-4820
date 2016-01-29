@@ -10,8 +10,7 @@ public class Framework {
     // preference list of men (n*n)
     int MenPrefs[][];
     // preference list of women (n*n)
-	int WomenPrefs[][]; 
-    
+	int WomenPrefs[][];
     // your output should fill this arraylist which is empty at start
 	ArrayList<MatchedPair> MatchedPairsList;
 
@@ -20,14 +19,11 @@ public class Framework {
         int man;
         // woman's number
 		int woman;
-
         public MatchedPair(int Man, int Woman) {
             man = Man;
             woman = Woman;
 		}
-		
 		public MatchedPair() {	
-
         }
 	}
 		
@@ -35,18 +31,13 @@ public class Framework {
 	void input(String input_name) {
         File file = new File(input_name);
 		BufferedReader reader = null;
-
         try {
             reader = new BufferedReader(new FileReader(file));
-			
-			String text = reader.readLine();
-			
-			String [] parts = text.split(" ");
+            String text = reader.readLine();
+            String [] parts = text.split(" ");
 			n = Integer.parseInt(parts[0]);
-			
-			MenPrefs = new int[n + 1][n];
+            MenPrefs = new int[n + 1][n];
 			WomenPrefs = new int[n + 1][n];
-
             for (int i = 1; i <= n; i++) {
                 text = reader.readLine();
                 String [] mList = text.split(" ");
@@ -54,7 +45,6 @@ public class Framework {
                     MenPrefs[i][j] = Integer.parseInt(mList[j]);
                 }
 			}
-			
 			for (int i = 1; i <= n; i++) {
 				text = reader.readLine();
 				String [] wList = text.split(" ");
@@ -72,7 +62,6 @@ public class Framework {
 	void output(String output_name) {
         try {
             PrintWriter writer = new PrintWriter(output_name, "UTF-8");
-
             for (int i = 0; i < MatchedPairsList.size(); i++) {
 				writer.println(MatchedPairsList.get(i).man + " " + MatchedPairsList.get(i).woman);
 			}
@@ -84,18 +73,14 @@ public class Framework {
 	
 	public Framework(String[] Args) {
         input(Args[0]);
-
-		MatchedPairsList = new ArrayList<MatchedPair>(); // your should put the final stable matching in this array list
-		
+        MatchedPairsList = new ArrayList<MatchedPair>(); // your should put the final stable matching in this array list
 		/* NOTE
 		 * if you want to declare that man x and woman y will get matched in the matching, you can
 		 * write a code similar to what follows:
 		 * MatchedPair pair=new MatchedPair(x,y);
 		 * MatchedPairsList.add(pair);
 		*/
-		
 		//YOUR CODE GOES HERE
-		
 		output(Args[1]);
 	}
 	
